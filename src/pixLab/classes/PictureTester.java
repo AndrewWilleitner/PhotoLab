@@ -134,10 +134,10 @@ public class PictureTester
   /** Method to test CheckerboardFilter */
   public static void testCheckerboardFilter()
   {
-    Picture swan = new Picture("swan.jpg");
-    swan.explore();
-    swan.checkerboardFilter();
-    swan.explore();
+    Picture  beach = new Picture("beach.jpg");
+    beach.explore();
+    beach.checkerboardFilter();
+    beach.explore();
   }
   
   /** Method to test RotateColorFilter */
@@ -156,6 +156,16 @@ public class PictureTester
     swan.MirrorDiagonal();
     swan.explore();
   }
+  
+  
+  public static void testChromakey()
+  {
+    Picture front = new Picture("blue-mark.jpg");
+    Picture background = new Picture("springtrap-jumpscare.jpg");
+    front.explore();
+    front.chromakey(front, background);
+    front.explore();
+  }
     
   /** Main method for testing.  Every class can have a main
     * method in Java */
@@ -164,28 +174,28 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-    testZeroBlue();
-    testKeepOnlyBlue();
-    testKeepOnlyRed();
-    testKeepOnlyGreen();
-    testNegate();
-    testGrayscale();
-    testFixUnderwater();
-    testMirrorVertical();
-    testMirrorVerticalRightToLeft();
-    testMirrorHorizontal();
-    testMirrorHorizontalBottomToTop();
-    testCheckerboardFilter();
-    testRotateColorFilter();
-    testMirrorTemple();
+//    testZeroBlue();
+//    testKeepOnlyBlue();
+//    testKeepOnlyRed();
+//    testKeepOnlyGreen();
+//    testNegate();
+//    testGrayscale();
+//    testFixUnderwater();
+//    testMirrorVertical();
+//    testMirrorVerticalRightToLeft();
+//    testMirrorHorizontal();
+//    testMirrorHorizontalBottomToTop();
+//    testCheckerboardFilter();
+//    testRotateColorFilter();
+//    testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
-    testMirrorDiagonal();
+//    testMirrorDiagonal();
     //testCollage();
     //testCopy();
     //testEdgeDetection();
     //testEdgeDetection2();
-    //testChromakey();
+    testChromakey();
     //testEncodeAndDecode();
     //testGetCountRedOverValue(250);
     //testSetRedToHalfValueInTopHalf();

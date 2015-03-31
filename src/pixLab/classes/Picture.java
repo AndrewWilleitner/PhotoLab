@@ -448,6 +448,27 @@ public class Picture extends SimplePicture
   }
   
   
+  public void chromakey(Picture front, Picture back)
+  {
+	  Pixel[][] frontImage = front.getPixels2D();
+	  Pixel[][] backImage = back.getPixels2D();
+	    Pixel frontPixel = null;
+	    Pixel backPixel = null;
+	    for (int row = 0; row < frontImage.length; row++)
+	    {
+	      for (int col = 0; col < frontImage[0].length; col++)
+	      {
+	        frontPixel = frontImage[row][col];
+	        backPixel = backImage[row][col];
+	        if (frontPixel.getRed() <= 30 && frontPixel.getGreen() <= 50 && frontPixel.getBlue() >= 25)
+	        {
+	        	frontPixel.setColor(backPixel.getColor());
+	        }
+	      }
+	    }
+  }
+  
+  
 //  public void RandomColorFilter()
 //  {
 //	  Pixel[][] pixels = this.getPixels2D();
